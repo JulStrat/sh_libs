@@ -1,5 +1,11 @@
-# sh_libs - Single Header ANSI C mini libraries
-## sh_karatsuba.h - polynomial multiplication using Karatsuba algorithm
+# sh_libs
+
+Single Header ANSI C mini libraries
+
+### sh_karatsuba.h
+
+Polynomial multiplication using Karatsuba algorithm.
+
 ```
 #include "sh_karatsuba.h"
 #include <assert.h>
@@ -55,4 +61,20 @@ int main(void) {
 
     return 0;
 }
+```
+
+### sh_bisect.h
+
+Ordered array bisection algorithms.
+
+```
+void *bisect_left(const void *key, const void *arr,
+                  size_t el_num, size_t el_size,
+                  int (*compare) (const void *, const void *));
+```
+
+```
+void *bisect_right(const void *key, const void *arr,
+                   size_t el_num, size_t el_size,
+                   int (*compare) (const void *, const void *));
 ```
