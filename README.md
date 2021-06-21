@@ -95,3 +95,19 @@ void *merge_into(void *dst, size_t num_el_dst,
                  size_t el_size, int (*compare) (const void *,
                                                  const void *));
 ```
+
+### sh_uf.h
+
+Union find data structure.
+
+``` C
+UNION_FIND uf_create(size_t size);
+
+int uf_union(UNION_FIND uf, size_t x, size_t y);
+
+int uf_connected(UNION_FIND uf, size_t x, size_t y);
+
+size_t uf_find(UNION_FIND uf, size_t x);
+
+void uf_free(UNION_FIND uf);
+```
