@@ -1,5 +1,8 @@
 CC = gcc
+# Win 32
 CFLAGS = -m32 -g -w -Wall -Wextra -Wconversion -pedantic -ansi
+# Raspi
+# CFLAGS = -g -w -Wall -Wextra -Wconversion -pedantic -ansi -fsanitize=address -static-libasan
 
 all: test_karatsuba test_bisect test_merge test_uf
 

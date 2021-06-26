@@ -23,7 +23,7 @@
 
 /**
  * @file    sh_uf.h
- * @brief   Union find.
+ * @brief   Union Find data structure - Rem's algorithm.
  * @author  Ioulianos Kakoulidis
  */
 

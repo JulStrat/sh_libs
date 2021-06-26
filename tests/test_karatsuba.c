@@ -30,7 +30,7 @@ int main(void) {
     for (i = 0; i < 2*BENCH_SZ-1; i++) {
         assert(expi[i] = ci[i]);
     }
-
+    free(ai); free(bi); free(ci); free(expi);
     /* double type */    
     ad = TCALLOC(double, BENCH_SZ);
     bd = TCALLOC(double, BENCH_SZ);
@@ -49,6 +49,6 @@ int main(void) {
     for (i = 0; i < 2*BENCH_SZ-1; i++) {
         assert(expd[i] = cd[i]);
     }
-
+    free(ad); free(bd); free(cd); free(expd);
     return 0;
 }

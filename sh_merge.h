@@ -79,6 +79,7 @@ extern "C" {
 #ifdef SH_MERGE_IMPLEMENTATION_H
 #include <stdlib.h>
 #include <string.h>
+#include <assert.h>
 void *
 merge(const void *arr_a, size_t num_el_a,
       const void *arr_b, size_t num_el_b,
@@ -90,6 +91,9 @@ merge(const void *arr_a, size_t num_el_a,
     char *bh = bc + (num_el_b * el_size);
     char *r = NULL;
     char *rc = NULL;
+
+    assert(el_size);
+    assert(compare);
 
     r = (char *) malloc((num_el_a + num_el_b) * el_size);
     if ((NULL == r) || (0 == (num_el_a + num_el_b) * el_size)) {
@@ -128,6 +132,9 @@ merge_into(void *dst, size_t num_el_dst,
     char *sc = sl + (num_el_src * el_size);
     char *r = NULL;
     char *rc = NULL;
+
+    assert(el_size);
+    assert(compare);
 
     r = (char *) realloc(dst, (num_el_dst + num_el_src) * el_size);
     if ((NULL == r) || (0 == (num_el_dst + num_el_src) * el_size)) {
