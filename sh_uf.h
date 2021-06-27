@@ -49,7 +49,7 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
-#ifdef SH_UF_IMPLEMENTATION_H
+#ifdef SH_UF_IMPLEMENTATION
 #include <stdlib.h>
 #include <string.h>
 UNION_FIND

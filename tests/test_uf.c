@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-#define SH_UF_IMPLEMENTATION_H
+#define SH_UF_IMPLEMENTATION
 #include "sh_uf.h"
 
 int

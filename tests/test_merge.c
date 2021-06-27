@@ -4,7 +4,7 @@
 
 #include "greatest.h"
 
-#define SH_MERGE_IMPLEMENTATION_H
+#define SH_MERGE_IMPLEMENTATION
 #include "sh_merge.h"
 
 int
@@ -20,9 +20,9 @@ cmp_int(const void *first, const void *second)
     return 0;
 }
 
-#define ARR_SZ 512*512 - 1
+#define ARR_SZ 30971
 int arint[ARR_SZ] = { 0 };
-#define TEST_NUM 164
+#define TEST_NUM 128
 
 TEST
 do_merge_test(int c)

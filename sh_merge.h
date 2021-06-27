@@ -76,7 +76,7 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
-#ifdef SH_MERGE_IMPLEMENTATION_H
+#ifdef SH_MERGE_IMPLEMENTATION
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>

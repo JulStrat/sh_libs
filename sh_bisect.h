@@ -69,9 +69,16 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
-#ifdef SH_BISECT_IMPLEMENTATION_H
+#ifdef SH_BISECT_IMPLEMENTATION
 #include <stddef.h>
 #include <assert.h>
+
+#define ASSERT_BISECT_ARGS \
+    assert(key); \
+    assert(arr); \
+    assert(el_size); \
+    assert(compare);
+
 void *
 bisect_left(const void *key, const void *arr,
             size_t el_num, size_t el_size,
@@ -82,8 +89,7 @@ bisect_left(const void *key, const void *arr,
     size_t mid;
     char *off;
 
-    assert(el_size);
-    assert(compare);
+    ASSERT_BISECT_ARGS
 
     while (low < high) {
         mid = low + ((high - low) >> 1);
@@ -108,8 +114,7 @@ bisect_right(const void *key, const void *arr,
     size_t mid;
     char *off;
 
-    assert(el_size);
-    assert(compare);
+    ASSERT_BISECT_ARGS
 
     while (low < high) {
         mid = low + ((high - low) >> 1);

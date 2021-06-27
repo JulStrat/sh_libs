@@ -3,7 +3,7 @@
 
 #include "greatest.h"
 
-#define SH_BISECT_IMPLEMENTATION_H
+#define SH_BISECT_IMPLEMENTATION
 #include "sh_bisect.h"
 
 int
@@ -19,9 +19,9 @@ cmp_int(const void *first, const void *second)
     return 0;
 }
 
-#define ARR_SZ 1024 * 1024 - 1
+#define ARR_SZ 30971
 int arint[ARR_SZ] = { 0 };
-#define TEST_NUM 64
+#define TEST_NUM 128
 
 void *
 lfind_ge(const void *key, const void *arr, size_t el_num, size_t el_size,
