@@ -70,14 +70,14 @@ extern "C" {
 }
 #endif
 #ifdef SH_BISECT_IMPLEMENTATION
-#include <stddef.h>
+/* #include <stddef.h> */
 #include <assert.h>
 
 #define ASSERT_BISECT_ARGS \
-    assert(key); \
-    assert(arr); \
-    assert(el_size); \
-    assert(compare);
+    assert(key != NULL); \
+    assert(arr != NULL); \
+    assert(el_size != 0); \
+    assert(compare != NULL);
 
 void *
 bisect_left(const void *key, const void *arr,
