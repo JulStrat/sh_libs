@@ -17,14 +17,14 @@
  * SOFTWARE. 
  */
 
-/*
- * indent options: -orig -nut -nbc -di1 
- */
-
 /**
  * @file    sh_bisect.h
  * @brief   Ordered array bisection algorithms.
  * @author  Ioulianos Kakoulidis
+ */
+
+/*
+ * GNU indent program options: -orig -bad -bap -bs -cli2 -di1 -nbc -nut
  */
 
 #ifndef SH_BISECT_H
@@ -70,15 +70,15 @@ extern "C" {
 }
 #endif
 #ifdef SH_BISECT_IMPLEMENTATION
-/* #include <stddef.h> */
+/*
+ * #include <stddef.h> 
+ */
 #include <assert.h>
-
-#define ASSERT_BISECT_ARGS \
+#define ASSERT_BISECT_ARGS() \
     assert(key != NULL); \
     assert(arr != NULL); \
     assert(el_size != 0); \
     assert(compare != NULL);
-
 void *
 bisect_left(const void *key, const void *arr,
             size_t el_num, size_t el_size,
@@ -89,7 +89,7 @@ bisect_left(const void *key, const void *arr,
     size_t mid;
     char *off;
 
-    ASSERT_BISECT_ARGS
+    ASSERT_BISECT_ARGS();
 
     while (low < high) {
         mid = low + ((high - low) >> 1);
@@ -114,7 +114,7 @@ bisect_right(const void *key, const void *arr,
     size_t mid;
     char *off;
 
-    ASSERT_BISECT_ARGS
+    ASSERT_BISECT_ARGS();
 
     while (low < high) {
         mid = low + ((high - low) >> 1);
@@ -129,5 +129,4 @@ bisect_right(const void *key, const void *arr,
     return (char *) arr + low * el_size;
 }
 #endif
-
 #endif

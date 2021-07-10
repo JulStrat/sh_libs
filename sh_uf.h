@@ -58,7 +58,8 @@ uf_create(size_t size)
     UNION_FIND uf;
     size_t i;
 
-    uf = malloc(sizeof(size_t) * size);
+    uf = malloc(sizeof (size_t) * size);
+
     for (i = 0; i < size; i++)
         uf[i] = i;
 

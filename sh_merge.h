@@ -17,14 +17,14 @@
  * SOFTWARE. 
  */
 
-/*
- * indent options: -orig -nut -nbc -di1 
- */
-
 /**
  * @file    sh_merge.h
  * @brief   Merge two sorted arrays.
  * @author  Ioulianos Kakoulidis
+ */
+
+/*
+ * GNU indent program options: -orig -bad -bap -bs -cli2 -di1 -nbc -nut
  */
 
 #ifndef SH_MERGE_H
@@ -80,6 +80,9 @@ extern "C" {
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#define ASSERT_MERGE_ARGS() \
+    assert(el_size != 0); \
+    assert(compare != NULL);
 void *
 merge(const void *arr_a, size_t num_el_a,
       const void *arr_b, size_t num_el_b,
@@ -92,11 +95,10 @@ merge(const void *arr_a, size_t num_el_a,
     char *r = NULL;
     char *rc = NULL;
 
-    assert(el_size);
-    assert(compare);
+    ASSERT_MERGE_ARGS();
 
     r = (char *) malloc((num_el_a + num_el_b) * el_size);
-    if ((NULL == r) || (0 == (num_el_a + num_el_b) * el_size)) {
+    if (!r || !((num_el_a + num_el_b) * el_size)) {
         return NULL;
     }
     rc = r;
@@ -133,11 +135,10 @@ merge_into(void *dst, size_t num_el_dst,
     char *r = NULL;
     char *rc = NULL;
 
-    assert(el_size);
-    assert(compare);
+    ASSERT_MERGE_ARGS();
 
     r = (char *) realloc(dst, (num_el_dst + num_el_src) * el_size);
-    if ((NULL == r) || (0 == (num_el_dst + num_el_src) * el_size)) {
+    if (!r || !((num_el_dst + num_el_src) * el_size)) {
         return NULL;
     }
     rc = r + (num_el_dst + num_el_src) * el_size;
